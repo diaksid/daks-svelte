@@ -1,0 +1,10 @@
+/*@import '/assets/fonts/open-sans/variable';*/
+@import '$lib/assets/tailwindcss';
+
+@layer base {
+  main,
+  [role="main"] {
+    @apply relative
+           min-h-screen overflow-y-hidden;
+  }
+}

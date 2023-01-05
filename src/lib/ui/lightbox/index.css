@@ -1,0 +1,28 @@
+/* Thumbnail.svelte */
+div.lightbox-thumbnail > * {
+  @apply max-w-full h-auto;
+}
+
+/* components/Body.svelte */
+div.lightbox-body.fullscreen {
+  @apply justify-center items-center max-w-inherit max-h-inherit w-inherit h-inherit;
+}
+div.lightbox-body > * {
+  @apply max-h-inherit h-inherit;
+}
+div.lightbox-body > img {
+  @apply grow object-contain;
+}
+div.lightbox-body.scrollable > :not(img) {
+  @apply max-h-full h-full;
+}
+
+/* components/Footer.svelte */
+div.lightbox-footer.fullscreen {
+  @apply fixed left-0 right-0 bottom-0 px-4;
+}
+
+/* components/Header.svelte */
+div.lightbox-header.fullscreen {
+  @apply fixed top-0 left-0 right-0;
+}

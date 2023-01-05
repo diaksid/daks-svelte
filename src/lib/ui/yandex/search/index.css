@@ -1,0 +1,27 @@
+#ya-site-form [type='search']:focus ~ div {
+  @apply bottom-full bg-transparent opacity-100;
+}
+
+#ya-site-results.custom {
+  @apply text-slate-700 dark:text-slate-300 
+         bg-transparent
+         transition-all ease-in origin-top;
+}
+
+#ya-site-results.custom > div[class^='results'] {
+  @apply opacity-0;
+}
+
+#ya-site-results.custom .b-head__r {
+  @apply p-0 align-middle;
+}
+
+#ya-site-results.custom .b-pager__arrow {
+  @apply block xs:inline
+         text-sm;
+}
+
+#ya-site-results.custom .b-pager__current,
+#ya-site-results.custom .b-pager__select {
+  @apply pt-0.5 pb-1 px-1.5 text-slate-200 rounded bg-slate-400;
+}

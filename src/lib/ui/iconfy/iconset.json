@@ -1,0 +1,36 @@
+{
+  "bi": [
+    "file-pdf",
+    "file-earmark-pdf"
+  ],
+  "ic": [
+    "round-search",
+    "round-search-off"
+  ],
+  "line-md": [
+    "github-loop",
+    "home-simple",
+    "home-simple-filled",
+    "home-simple-twotone",
+    "loading-twotone-loop"
+  ],
+  "material-symbols": [
+    "adjust-outline",
+    "dark-mode-outline",
+    "light-mode-outline",
+    "location-on-outline",
+    "mail-outline",
+    "menu",
+    "phone-in-talk-outline"
+  ],
+  "mdi": [
+    "cube",
+    "cube-outline",
+    "home",
+    "home-outline",
+    "transfer-down"
+  ],
+  "wpf": [
+    "search"
+  ]
+}

@@ -64,8 +64,8 @@
            wrapper lg:container">
     <Home
       on:click={click}
-      class="p-1.5 text-cyan-600"
-      size={32} />
+      class="p-2 text-cyan-600 hover:text-sky-500 dark:hover:text-sky-300"
+      size={28} />
 
     <Waiting
       class="pt-0.5 ml-auto text-gray-800 dark:text-gray-200"

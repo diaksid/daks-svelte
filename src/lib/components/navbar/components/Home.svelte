@@ -16,7 +16,7 @@
 
 {#if $page.url.pathname === '/'}
   <span
-    class="relative z-10 flex
+    class="relative z-10 flex disabled
            {className}"
     role="none">
     {#if image}

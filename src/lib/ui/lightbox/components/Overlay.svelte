@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import { fade } from 'svelte/transition';
   import { onMount, onDestroy } from 'svelte';
-  import type { Css, Options } from '../Types';
+  import type { Css, Options } from '../types';
 
   const dispatch = createEventDispatcher();
 

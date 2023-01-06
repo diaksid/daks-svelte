@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from './Button.svelte';
-  import type { Css } from '../Types';
+  import type { Css } from '../types';
 
   export let css: Css = {};
   export let control: (s: string) => boolean;

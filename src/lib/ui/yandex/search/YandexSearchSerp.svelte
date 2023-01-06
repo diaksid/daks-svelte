@@ -5,6 +5,7 @@
 
   let className = '';
   export { className as class };
+  
   export let duration = 500;
 
   let result: HTMLElement;

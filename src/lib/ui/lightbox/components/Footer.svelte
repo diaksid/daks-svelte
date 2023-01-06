@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Css, Status } from '../Types';
+  import type { Css, Status } from '../types';
 
   export let title: string;
   export let description: string;

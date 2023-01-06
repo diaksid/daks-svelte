@@ -1,15 +1,4 @@
-type Behaviour = 'hide' | 'loop' | '';
-
-type Status =
-  | {
-      countItems: number;
-      activeItem: number;
-    }
-  | undefined;
-
-type Loader = (() => void) | undefined;
-
-interface Options {
+export interface Options {
   behaviour?: Behaviour;
   clickableClose?: boolean;
   buttonClose?: boolean;
@@ -19,16 +8,25 @@ interface Options {
   duration?: number;
 }
 
-interface Css {
+export interface Css {
   overlay?: string;
   header?: string;
   footer?: string;
 }
 
-interface Item {
+export interface Item {
   id: number;
   title: string;
   description: string;
 }
 
-export type { Options, Css, Item, Status, Loader };
+export type Behaviour = '' | 'hide' | 'loop';
+
+export type Status =
+  | undefined
+  | {
+      countItems: number;
+      activeItem: number;
+    };
+
+export type Loader = undefined | (() => void);

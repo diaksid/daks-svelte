@@ -6,22 +6,17 @@ import type { Page } from '@sveltejs/kit';
 export const load = (page: Page) => ({
   navbar: [
     {
-      href: '/about',
-      label: 'О!'
+      href: '/iconify',
+      label: 'iconify'
     }
   ],
   footer: {
     copylink: {
-      href: '//www.npmjs.com/package/daks-svelte',
+      href: '//daks.dev',
       target: '_blank',
-      label: 'daks-svelte npm package'
+      label: 'daks dev'
     },
-    links: [
-      {
-        href: '/admin',
-        label: 'Администрирование'
-      }
-    ]
+    links: []
   },
   referesh: page.url.pathname
 });

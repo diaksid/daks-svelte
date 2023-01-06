@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from './Button.svelte';
   import type { Writable } from 'svelte/store';
-  import type { Options } from '../Types';
+  import type { Options } from '../types';
 
   export let options: Options;
 

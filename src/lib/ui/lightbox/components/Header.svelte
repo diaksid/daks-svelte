@@ -3,7 +3,7 @@
   import fullscreenExitSvg from './fullscreen-exit.svg';
   import fullscreenSvg from './fullscreen.svg';
   import closeSvg from './close.svg';
-  import type { Css, Options } from '../Types';
+  import type { Css, Options } from '../types';
 
   const dispatch = createEventDispatcher();
 

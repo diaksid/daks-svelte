@@ -7,7 +7,7 @@
   import Body from './components/Body.svelte';
   import Controller from './components/Controller.svelte';
   import type { Writable } from 'svelte/store';
-  import type { Options, Css, Item, Loader } from './Types';
+  import type { Options, Css, Item, Loader } from './types';
 
   import './index.css';
 

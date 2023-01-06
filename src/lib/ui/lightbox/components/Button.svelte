@@ -1,6 +1,6 @@
 <script lang="ts">
   import chevronSvg from './chevron.svg';
-  import type { Options } from '../Types';
+  import type { Options } from '../types';
 
   export let options: Options;
 

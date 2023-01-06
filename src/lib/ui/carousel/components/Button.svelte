@@ -3,7 +3,7 @@
   import chevronSvg from './chevron.svg';
   import pauseSvg from './pause.svg';
   import startSvg from './start.svg';
-  import type { Css } from '../Types';
+  import type { Css } from '../types';
 
   const dispatch = createEventDispatcher();
 

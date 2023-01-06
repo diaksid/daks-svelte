@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Link } from '$lib/ui';
+  import { Link } from '$lib';
+  import type { NavLink } from '$lib/types';
   import { time } from './stores';
-
+  
   export let copylink: undefined | NavLink = undefined;
   export let links: undefined | NavLink[] = undefined;
 
@@ -41,12 +42,12 @@
       </span>
     {/if}
 
-    <div class="px-2 text-slate-400">
+    <div class="px-4 text-slate-400">
       {timer.format($time)}
     </div>
 
-    {#if links}
-      <nav>
+    {#if links?.length}
+      <nav class="mr-4">
         {#each links as link}
           <Link
             href={link.href}

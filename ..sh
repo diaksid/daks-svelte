@@ -7,14 +7,14 @@ until [ $ac = "-" ]; do
     echo -e "";
     echo -e "1 : npm:install";
     echo -e "2 : npm:update";
-    echo -e "3 : npm:upgrade";
     echo -e "";
-    echo -e "4 : svelte:check";
+    echo -e "3 : svelte:check";
+    echo -e "4 : svelte:package";
     echo -e "5 : vite:build";
     echo -e "";
-    echo -e "7 : generate:sitemap";
+    echo -e "7 : create:sitemap";
     echo -e "";
-    echo -e "9 : gzipper:compress";
+    echo -e "9 : npm:publish";
     echo -e "0 : clean";
     echo -e "";
     echo -e "m : memcached:restart";
@@ -37,24 +37,26 @@ until [ $ac = "-" ]; do
             npm update;;
 
         "3")
-            echo -e "> npm:upgrade";
-            npm upgrade;;
-
-        "4")
             echo -e "> svelte:check";
             npm run check;;
+
+        "4")
+            echo -e "> svelte:package";
+            npm run package;;
 
         "5")
             echo -e "> vite:build";
             npm run build;;
 
         "7")
-            echo -e "> generate:sitemap";
-            npm run generate:sitemap;;
+            echo -e "> create:sitemap";
+            npm run create:sitemap;;
 
         "9")
-            echo -e "> gzipper:compress";
-            npm run compress;;
+            echo -e "> npm:publish";
+            cd package;
+            npm publish;
+            cd ..;;
 
         "0")
             echo -e "> clean";

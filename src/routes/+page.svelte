@@ -11,7 +11,14 @@
 
 <main class="content justify-around grow">
   <div class="content flex flex-col items-center gap-4p">
-    <h1 class="mb-8 text-2xl text-slate-500">Welcome to your library project</h1>
+    <a
+      rel="noreferrer nofollow"
+      class="opacity-50 hover:opacity-100 hover:scale-110
+             transition-all duration-300 ease-in-out"
+      href="//www.npmjs.com/package/daks-svelte"
+      target="_blank">
+    <h1 class="mb-8 text-3xl">Welcome to your library project</h1>
+    </a>
 
     <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
 
@@ -20,9 +27,9 @@
     <a
       rel="noreferrer nofollow"
       class="mt-8
-             opacity-50 hover:opacity-100 text-slate-500 hover:text-sky-500 hover:scale-110
+             opacity-50 hover:opacity-100 text-slate-500 hover:text-slate-300 hover:scale-110
              transition-all duration-300 ease-in-out"
-      href="https://github.com/diaksid/daks-svelte"
+      href="//github.com/diaksid/daks-svelte"
       target="_blank">
       <Icon
         icon="line-md:github-loop"

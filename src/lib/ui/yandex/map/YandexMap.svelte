@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import type { Timeout } from '$lib/types';
 
   let className: string = '';
   export { className as class };

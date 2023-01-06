@@ -1,6 +1,6 @@
 <script lang="ts">
   import { blur } from 'svelte/transition';
-  import type { Options } from '../Types';
+  import type { Options } from '../types';
 
   export let fullscreen: boolean;
   export let scrollable: boolean;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import placeholder from './placeholder';
-  import type { Image, Item, Css, Loaded } from '../Types';
+  import type { Image, Item, Css, Loaded } from '../types';
 
   export let item: Item;
 

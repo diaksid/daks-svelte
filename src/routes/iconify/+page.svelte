@@ -13,7 +13,7 @@
   const handleIconset = async (ev: Event) => {
     ev.preventDefault();
     waiting = true;
-    const response = await fetch('/admin/iconfy', {
+    const response = await fetch('/iconify/upload', {
       method: 'GET',
       headers: {
         accept: 'application/json'

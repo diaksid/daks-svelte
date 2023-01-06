@@ -4,7 +4,7 @@
   import Header from './components/Header.svelte';
   import Footer from './components/Footer.svelte';
   import Body from './components/Body.svelte';
-  import type { Options, Css, Loader } from './Types';
+  import type { Options, Css, Loader } from './types';
 
   import './index.css';
 

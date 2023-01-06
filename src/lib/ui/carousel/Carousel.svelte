@@ -4,7 +4,7 @@
   import { flip } from 'svelte/animate';
   import Figure from './components/Figure.svelte';
   import Buttons from './components/Buttons.svelte';
-  import type { Image, Item, Css, Show, Controls, Easing, Loader, Loaded, Timeout } from './Types';
+  import type { Image, Item, Css, Show, Controls, Easing, Loader, Loaded, Timeout } from './types';
 
   let className = '';
   export { className as class };

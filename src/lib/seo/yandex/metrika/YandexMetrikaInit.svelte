@@ -14,17 +14,17 @@
       });
 
     onMount(() => {
-      (function (m: any, i) {
-        m[i] = function () {
-          (m[i].a = m[i].a || []).push(arguments);
-        };
-        m[i].l = Number(new Date());
-      })(window, 'ym');
-      const el = document.createElement('script');
-      el.src = 'https://mc.yandex.ru/metrika/tag.js';
-      el.async = true;
-      el.addEventListener('load', init);
-      document.head.appendChild(el);
+        (function (m: any, i) {
+          m[i] = function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+          m[i].l = Number(new Date());
+        })(window, 'ym');
+        const el = document.createElement('script');
+        el.src = 'https://mc.yandex.ru/metrika/tag.js';
+        el.async = true;
+        el.addEventListener('load', init);
+        document.head.appendChild(el);
     });
   } else console.debug('Yandex.Metrika <counter> incorrect');
 </script>

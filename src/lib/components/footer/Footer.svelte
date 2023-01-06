@@ -1,14 +1,14 @@
 <script lang="ts">
   import { Link } from '$lib/ui';
-  import { time } from '$lib/stores';
+  import { time } from './stores';
 
-  let className = '';
-  export { className as class };
+  export let links: undefined | NavLink[] = undefined;
 
-  const year = new Intl.DateTimeFormat('ru', {
-    year: '2-digit'
-  });
-  const online = new Intl.DateTimeFormat('ru', {
+  $$props.class ??= '';
+
+  const year = new Date().getFullYear();
+
+  const timer = new Intl.DateTimeFormat('ru', {
     minute: '2-digit',
     second: '2-digit'
   });
@@ -21,23 +21,30 @@
     class="wrapper lg:container
            flex flex-row justify-between items-center
            leading-loose font-mono font-thin text-2xs xs:text-xs sm:text-sm sm:tracking-wide text-gray-400/75
-           {className}">
+           {$$props.class}">
     <Link
       href="/admin"
       class="ml-4 hover:text-sky-500"
       rel="nofollow">
-      &copy; 20{year.format($time)} <slot />&trade;
+      &copy; {year}
+      <slot />&trade;
     </Link>
 
-    <div class="px-2 text-center text-slate-400">
-      {online.format($time)}
+    <div class="px-2 text-slate-400">
+      {timer.format($time)}
     </div>
 
-    <Link
-      href="/privacy"
-      class="mr-4 text-right hover:text-sky-500"
-      itemprop="relatedLink">
-      Политика конфиденциальности
-    </Link>
+    {#if links}
+      <div>
+        {#each links as link}
+          <Link
+            href={link.href}
+            class="mr-4 text-right hover:text-sky-500"
+            itemprop="relatedLink">
+            {link.label}
+          </Link>
+        {/each}
+      </div>
+    {/if}
   </div>
 </footer>

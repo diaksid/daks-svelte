@@ -7,7 +7,10 @@
   import ToggleNav from './components/ToggleNav.svelte';
   import Waiting from './components/Waiting.svelte';
 
-  export let navigation!: NavLink[];
+  export let links!: NavLink[];
+  export let centered = true;
+
+  $$props.class ??= '';
 
   let scrollY: any;
   $: scrolled = scrollY > 43;
@@ -80,7 +83,7 @@
              opacity-0 lg:opacity-100
              transition-opacity ease-in-out"
       style:transition-duration={`${duration}ms`}>
-      {#each navigation as link}
+      {#each links as link}
         <!-- sveltekit:prefetch / sveltekit:prefetch -->
         {#if link.href === $page.url.pathname}
           <span
@@ -105,8 +108,9 @@
     </nav>
 
     <ToggleTheme
-      class="p-2.5 ml-4
-             text-cyan-600 hover:text-sky-300"
+      class="p-2.5 ml-4 
+             text-cyan-600 hover:text-sky-300
+             {centered ? 'lg:ml-auto' : ''}"
       size={25} />
 
     <ToggleSearch

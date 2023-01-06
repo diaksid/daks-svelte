@@ -8,10 +8,10 @@
 
   let dark: boolean;
   const toggle = () => {
-    dark = window.document.documentElement.classList.toggle('dark');
+    dark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('color-theme', dark ? 'dark' : 'light');
   };
-  onMount(() => (dark = window.document.documentElement.classList.contains('dark')));
+  onMount(() => (dark = document.documentElement.classList.contains('dark')));
 </script>
 
 <svelte:head>
@@ -20,8 +20,8 @@
       localStorage.getItem('color-theme') === 'dark' ||
       (!('color-theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ? window.document.documentElement.classList.add('dark')
-        : window.document.documentElement.classList.remove('dark');
+        ? document.documentElement.classList.add('dark')
+        : document.documentElement.classList.remove('dark');
     }
   </script>
 </svelte:head>

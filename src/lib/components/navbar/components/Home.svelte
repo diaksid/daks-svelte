@@ -13,7 +13,7 @@
            {className}"
     role="none">
     <Icon
-      icon="mdi:cube"
+      icon="line-md:home-simple-twotone"
       width={size}
       height={size}>
       Главная
@@ -31,10 +31,16 @@
            {className}"
     href="/"
     itemprop="relatedLink">
-    <img
+    <Icon
+      icon="line-md:home-simple"
+      width={size}
+      height={size}>
+      Главная
+    </Icon>
+    <!--img
       src="/images/logo.xs.webp"
       width={size}
       height={size}
-      alt="Главная" />
+      alt="Главная" /-->
   </a>
 {/if}

@@ -6,7 +6,10 @@ const fixed = plugin(function ({ addVariant }) {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,svelte,ts,js}'],
+  content: [
+    './src/**/*.{html,svelte,ts,js}',
+    './node_modules/daks-svelte/**/*.{svelte,html,ts,js}'
+  ],
 
   //presets: [require('./src/lib/assets/tailwindcss/presets/common.cjs')],
 

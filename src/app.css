@@ -1,10 +1,45 @@
-/*@import '/assets/fonts/open-sans/variable';*/
+@import '$lib/assets/fonts/open-sans/variable';
 @import '$lib/assets/tailwindcss';
 
 @layer base {
-  main,
-  [role="main"] {
-    @apply relative
-           min-h-screen overflow-y-hidden;
+  :root {
+    --navbar-height: 47px;
   }
+
+  body {
+    @apply relative
+           text-slate-800 dark:text-slate-300
+           bg-neutral-50 dark:bg-slate-800;
+  }
+
+  h1 {
+    @apply font-bold tracking-wide
+           text-3xl sm:text-4xl md:text-4.5xl lg:text-5xl
+           text-gray-500 dark:text-gray-300;
+  }
+}
+
+@layer utilities {
+  body.overflow-hidden,
+  body.overflow-hidden .overflow-offset {
+    padding-right: var(--scrollbar-size) !important;
+  }
+
+  .min-h-screen--navbar {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+  .max-h-screen--navbar {
+    max-height: calc(100vh - var(--navbar-height));
+  }
+}
+
+main,
+[role='main'] {
+  @apply flex flex-col;
+  padding-top: var(--navbar-height);
+}
+main > header,
+[role='main'] > header {
+  @apply pt-4 sm:pt-5 md:pt-8 xl:pt-12
+         mb-12 md:mb-14 xl:mb-16;
 }

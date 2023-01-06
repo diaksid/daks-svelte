@@ -2,9 +2,16 @@
   import { page } from '$app/stores';
   import Icon from '$lib/ui/iconfy';
 
+  export let icons: { home: string; page: string } = {
+    home: 'line-md:home-simple-twotone',
+    page: 'line-md:home-simple'
+  };
+  export let image: undefined | string = undefined;
+  export let size = 25;
+  export let alt = 'Главная';
+
   let className = '';
   export { className as class };
-  export let size = 25;
 </script>
 
 {#if $page.url.pathname === '/'}
@@ -12,17 +19,20 @@
     class="relative z-10 flex
            {className}"
     role="none">
-    <Icon
-      icon="line-md:home-simple-twotone"
-      width={size}
-      height={size}>
-      Главная
-    </Icon>
-    <!--img
-      src="/images/logo.xs.webp"
-      width={size}
-      height={size}
-      alt="Главная" /-->
+    {#if image}
+      <img
+        src={image}
+        width={size}
+        height={size}
+        {alt} />
+    {:else}
+      <Icon
+        icon={icons.home}
+        width={size}
+        height={size}>
+        {alt}
+      </Icon>
+    {/if}
   </span>
 {:else}
   <a
@@ -31,16 +41,19 @@
            {className}"
     href="/"
     itemprop="relatedLink">
-    <Icon
-      icon="line-md:home-simple"
-      width={size}
-      height={size}>
-      Главная
-    </Icon>
-    <!--img
-      src="/images/logo.xs.webp"
-      width={size}
-      height={size}
-      alt="Главная" /-->
+    {#if image}
+      <img
+        src={image}
+        width={size}
+        height={size}
+        {alt} />
+    {:else}
+      <Icon
+        icon={icons.page}
+        width={size}
+        height={size}>
+        {alt}
+      </Icon>
+    {/if}
   </a>
 {/if}

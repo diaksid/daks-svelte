@@ -2,12 +2,13 @@
   import { Link } from '$lib/ui';
   import { time } from './stores';
 
+  export let copylink: undefined | NavLink = undefined;
   export let links: undefined | NavLink[] = undefined;
 
-  $$props.class ??= '';
+  let className = '';
+  export { className as class };
 
   const year = new Date().getFullYear();
-
   const timer = new Intl.DateTimeFormat('ru', {
     minute: '2-digit',
     second: '2-digit'
@@ -21,21 +22,31 @@
     class="wrapper lg:container
            flex flex-row justify-between items-center
            leading-loose font-mono font-thin text-2xs xs:text-xs sm:text-sm sm:tracking-wide text-gray-400/75
-           {$$props.class}">
-    <Link
-      href="/admin"
-      class="ml-4 hover:text-sky-500"
-      rel="nofollow">
-      &copy; {year}
-      <slot />&trade;
-    </Link>
+           {className}">
+    {#if copylink}
+      <Link
+        class="ml-4 hover:text-sky-500"
+        href={copylink.href}
+        target={copylink.target}
+        rel="nofollow">
+        &copy; {year}
+        <slot />&trade;
+      </Link>
+    {:else}
+      <span
+        class="ml-4 cursor-default"
+        role="none">
+        &copy; {year}
+        <slot />&trade;
+      </span>
+    {/if}
 
     <div class="px-2 text-slate-400">
       {timer.format($time)}
     </div>
 
     {#if links}
-      <div>
+      <nav>
         {#each links as link}
           <Link
             href={link.href}
@@ -44,7 +55,7 @@
             {link.label}
           </Link>
         {/each}
-      </div>
+      </nav>
     {/if}
   </div>
 </footer>

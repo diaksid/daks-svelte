@@ -16,15 +16,18 @@ declare let Ya: any;
 declare let ymaps: any;
 declare let ym: any;
 
-interface MenuItem {
+interface NavLink {
   label: string;
-  title?: string;
+  href: string;
+  target?: string;
   handle?: (event?: Event) => void;
+  links?: NavLink[];
 }
 
-interface NavLink extends MenuItem {
-  href: string;
-  links?: NavLink[];
+interface MenuItem {
+  name: string;
+  title?: string;
+  handle?: (event?: Event) => void;
 }
 
 declare module '*?webp' {

@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "DVA svelte package",
   "repository": {
     "type": "git",
@@ -10,11 +10,13 @@
   "homepage": "https://daks.dev/",
   "private": false,
   "scripts": {
-    "clean": "rimraf .svelte-kit && rimraf package",
+    "clean": "rimraf .svelte-kit && rimraf build && rimraf package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "vite dev --port=3000",
-    "build": "svelte-kit sync && svelte-package",
+    "build": "vite build",
+    "preview": "vite preview --port=3000",
+    "package": "svelte-kit sync && svelte-package",
     "prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
     "test": "playwright test",
     "test:unit": "vitest",
@@ -23,7 +25,8 @@
   },
   "devDependencies": {
     "@playwright/test": "*",
-    "@sveltejs/adapter-auto": "*",
+    "@sveltejs/adapter-node": "*",
+    "@sveltejs/adapter-static": "*",
     "@sveltejs/kit": "*",
     "@sveltejs/package": "*",
     "@typescript-eslint/eslint-plugin": "*",
@@ -31,6 +34,7 @@
     "autoprefixer": "*",
     "cssnano": "*",
     "cssnano-preset-advanced": "*",
+    "dotenv": "*",
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-svelte3": "*",

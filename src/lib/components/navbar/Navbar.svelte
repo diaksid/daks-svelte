@@ -10,7 +10,8 @@
   export let links!: NavLink[];
   export let centered = true;
 
-  $$props.class ??= '';
+  let className = '';
+  export { className as class };
 
   let scrollY: any;
   $: scrolled = scrollY > 43;
@@ -54,7 +55,7 @@
   class:absolute={!scrolled}
   class="z-10 top-0 left-0 w-full fixed:bg-slate-700/90 overflow-offset
          transition-all ease-in-out origin-top
-         {$$props.class}"
+         {className}"
   style:transition-duration={`${duration}ms`}>
   <div
     class="relative

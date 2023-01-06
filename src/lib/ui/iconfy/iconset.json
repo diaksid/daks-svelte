@@ -1,8 +1,4 @@
 {
-  "bi": [
-    "file-pdf",
-    "file-earmark-pdf"
-  ],
   "ic": [
     "round-search",
     "round-search-off"
@@ -15,7 +11,6 @@
     "loading-twotone-loop"
   ],
   "material-symbols": [
-    "adjust-outline",
     "dark-mode-outline",
     "light-mode-outline",
     "location-on-outline",
@@ -26,9 +21,7 @@
   "mdi": [
     "cube",
     "cube-outline",
-    "home",
-    "home-outline",
-    "transfer-down"
+    "transfer-up"
   ],
   "wpf": [
     "search"

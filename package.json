@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "DVA svelte package",
   "repository": {
     "type": "git",
@@ -24,11 +24,13 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "devDependencies": {
+    "@iconify/svelte": "*",
     "@playwright/test": "*",
     "@sveltejs/adapter-node": "*",
     "@sveltejs/adapter-static": "*",
     "@sveltejs/kit": "*",
     "@sveltejs/package": "*",
+    "@types/sharp": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
     "autoprefixer": "*",
@@ -38,23 +40,22 @@
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-svelte3": "*",
+    "iconify-icon": "*",
     "postcss": "*",
     "postcss-import": "*",
     "postcss-load-config": "*",
     "prettier": "*",
     "prettier-plugin-svelte": "*",
     "rimraf": "*",
+    "sharp": "*",
     "svelte": "*",
     "svelte-check": "*",
+    "svelte-heros-v2": "*",
     "tailwindcss": "*",
     "tslib": "*",
     "typescript": "*",
     "vite": "*",
     "vitest": "*"
-  },
-  "dependencies": {
-    "@iconify/svelte": "*",
-    "iconify-icon": "*"
   },
   "type": "module"
 }

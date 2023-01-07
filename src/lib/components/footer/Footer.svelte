@@ -30,7 +30,7 @@
         href={copylink.href}
         target={copylink.target}
         rel="nofollow">
-        &copy; {year}
+        &copy;{year}
         <slot />&trade;
       </Link>
     {:else}

@@ -1,17 +1,26 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { Home } from 'svelte-heros-v2';
   import { page } from '$app/stores';
+
+  /*
   import Icon from '$lib/ui/iconfy';
 
   export let icons: { home: string; page: string } = {
     home: 'line-md:home-simple-twotone',
     page: 'line-md:home-simple'
   };
+  */
+
   export let image: undefined | string = undefined;
-  export let size = 25;
+  export let size = '24';
   export let alt = 'Главная';
 
   let className = '';
   export { className as class };
+
+  let icon: ConstructorOfATypedSvelteComponent;
+  onMount(() => (icon = Home));
 </script>
 
 {#if $page.url.pathname === '/'}
@@ -26,12 +35,17 @@
         height={size}
         {alt} />
     {:else}
-      <Icon
+      <svelte:component
+        this={icon}
+        {size}
+        ariaLabel={alt}
+        variation="solid" />
+      <!--Icon
         icon={icons.home}
         width={size}
         height={size}>
         {alt}
-      </Icon>
+      </Icon-->
     {/if}
   </span>
 {:else}
@@ -48,12 +62,16 @@
         height={size}
         {alt} />
     {:else}
-      <Icon
+      <svelte:component
+        this={icon}
+        {size}
+        ariaLabel={alt} />
+      <!--Icon
         icon={icons.page}
         width={size}
         height={size}>
         {alt}
-      </Icon>
+      </Icon-->
     {/if}
   </a>
 {/if}

@@ -29,12 +29,12 @@
   <meta
     name="robots"
     content="noindex, follow" />
-  <title>DAKS • Администрирование</title>
+  <title>DAKS • Iconify</title>
 </svelte:head>
 
 <main>
   <header class="content">
-    <h1 class="title">Администрирование</h1>
+    <h1 class="title">Iconify</h1>
   </header>
 
   {#if import.meta.env?.DEV}

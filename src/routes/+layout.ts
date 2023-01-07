@@ -8,6 +8,10 @@ export const load = (page: Page) => ({
     {
       href: '/iconify',
       label: 'iconify'
+    },
+    {
+      href: '/heros-v2',
+      label: 'heros v2'
     }
   ],
   footer: {

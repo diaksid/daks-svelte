@@ -7,9 +7,9 @@ until [ $ac = "-" ]; do
     echo -e "";
     echo -e "1 : npm:install";
     echo -e "2 : npm:update";
+    echo -e "3 : svelte:package";
     echo -e "";
-    echo -e "3 : svelte:check";
-    echo -e "4 : svelte:package";
+    echo -e "4 : svelte:check";
     echo -e "5 : vite:build";
     echo -e "";
     echo -e "7 : create:sitemap";
@@ -37,12 +37,12 @@ until [ $ac = "-" ]; do
             npm update;;
 
         "3")
-            echo -e "> svelte:check";
-            npm run check;;
-
-        "4")
             echo -e "> svelte:package";
             npm run package;;
+
+        "4")
+            echo -e "> svelte:check";
+            npm run check;;
 
         "5")
             echo -e "> vite:build";

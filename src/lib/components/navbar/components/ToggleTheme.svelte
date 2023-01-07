@@ -1,17 +1,20 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Icon from '$lib/ui/iconfy';
+  import { Moon, Sun } from 'svelte-heros-v2';
+  //import Icon from '$lib/ui/iconfy';
 
   let className = '';
   export { className as class };
-  export let size = 24;
 
-  let dark: boolean;
+  export let size = '24';
+
+  let icon: undefined | ConstructorOfATypedSvelteComponent = undefined;
   const toggle = () => {
-    dark = document.documentElement.classList.toggle('dark');
+    const dark = document.documentElement.classList.toggle('dark');
+    icon = dark ? Sun : Moon;
     localStorage.setItem('color-theme', dark ? 'dark' : 'light');
   };
-  onMount(() => (dark = document.documentElement.classList.contains('dark')));
+  onMount(() => (icon = document.documentElement.classList.contains('dark') ? Sun : Moon));
 </script>
 
 <svelte:head>
@@ -34,8 +37,12 @@
   aria-haspopup="true"
   aria-expanded="false"
   aria-labelledby="">
-  <Icon
+  <svelte:component
+    this={icon}
+    {size}
+    ariaLabel="color theme" />
+  <!--Icon
     icon={`material-symbols:${dark ? 'light' : 'dark'}-mode-outline`}
     width={size}
-    height={size} />
+    height={size} /-->
 </button>

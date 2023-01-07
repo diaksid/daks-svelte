@@ -65,12 +65,12 @@
     <Home
       on:click={click}
       class="p-2 text-cyan-600 hover:text-sky-500 dark:hover:text-sky-300"
-      size={28} />
+      size="28" />
 
     <Waiting
-      class="pt-0.5 ml-auto text-gray-800 dark:text-gray-200"
+      class="ml-auto text-gray-400"
       {waiting}
-      size={22} />
+      size="24" />
 
     <nav
       bind:this={nav}
@@ -113,13 +113,13 @@
       class="p-2.5 ml-4 
              text-cyan-600 hover:text-sky-300
              {centered ? 'lg:ml-auto' : ''}"
-      size={25} />
+      size="25" />
 
     <ToggleSearch
       class="p-2.5 mt-0.5 ml-4
              text-slate-500 hover:text-slate-200"
       frame={navbar}
-      size={25}
+      size="25"
       disabled={$page.url.pathname.indexOf('/search') === 0} />
 
     <ToggleNav
@@ -127,6 +127,6 @@
       on:close={close}
       class="lg:hidden p-2 ml-4
              text-slate-500 hover:text-slate-200"
-      size={28} />
+      size="28" />
   </div>
 </div>

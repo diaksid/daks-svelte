@@ -1,12 +1,13 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Icon from '$lib/ui/iconfy';
+  import { MagnifyingGlassMinus, MagnifyingGlassPlus } from 'svelte-heros-v2';
+  //import Icon from '$lib/ui/iconfy';
   import { YandexSearchForm } from '$lib/ui/yandex/search';
 
   let className = '';
   export { className as class };
   export let frame: HTMLElement;
-  export let size = 24;
+  export let size = '24';
   export let disabled = false;
 
   let search = false;
@@ -45,8 +46,12 @@
     }
   };
 
-  let component: ConstructorOfATypedSvelteComponent;
-  onMount(() => (component = YandexSearchForm));
+  let icon: (() => undefined) | (() => ConstructorOfATypedSvelteComponent) = () => undefined;
+  let form: ConstructorOfATypedSvelteComponent;
+  onMount(() => {
+    icon = () => (search || disabled ? MagnifyingGlassMinus : MagnifyingGlassPlus);
+    form = YandexSearchForm;
+  });
 </script>
 
 <svelte:window on:keydown={handleKey} />
@@ -63,11 +68,15 @@
     aria-haspopup="true"
     aria-expanded="false"
     aria-labelledby="">
-    <Icon
+    <svelte:component
+      this={icon()}
+      class="pointer-events-none"
+      {size} />
+    <!--Icon
       icon={`ic:round-search${search || disabled ? '-off' : ''}`}
       class="pointer-events-none"
       width={size}
-      height={size} />
+      height={size} /-->
   </button>
 </div>
 
@@ -77,7 +86,7 @@
          transition-all duration-300 ease-in-out origin-center"
   class:scale-x-0={!search}>
   <svelte:component
-    this={component}
+    this={form}
     class="max-w-xs sm:max-w-xl mx-auto mt-8
            drop-shadow-lg hover:shadow-xl shadow-slate-300"
     button={true}

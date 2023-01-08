@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Icon } from '$lib';
+  import Icon from '$lib/ui/iconify';
   import Bundle from './Bundle.svelte';
-  import bundles from '$lib/ui/iconfy/bundles.json';
-  import custom from '$lib/ui/iconfy/custom';
+  import bundles from '$lib/ui/iconify/bundles.json';
+  import custom from '$lib/ui/iconify/custom';
 
   //import type { PageData } from './$types';
   //export let data: PageData;

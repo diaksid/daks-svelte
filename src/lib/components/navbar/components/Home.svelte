@@ -4,7 +4,7 @@
   import { page } from '$app/stores';
 
   /*
-  import Icon from '$lib/ui/iconfy';
+  import Icon from '$lib/ui/iconify';
 
   export let icons: { home: string; page: string } = {
     home: 'line-md:home-simple-twotone',

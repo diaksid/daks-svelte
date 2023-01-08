@@ -8,8 +8,6 @@ export { default as Carousel } from './ui/carousel/Carousel.svelte';
 
 export { default as Dropdown } from './ui/dropdown/Dropdown.svelte';
 
-export { default as Icon } from './ui/iconfy/Icon.svelte';
-
 export { default as Lightbox } from './ui/lightbox/Lightbox.svelte';
 export { default as Lightboxes } from './ui/lightbox/Lightboxes.svelte';
 export { default as LightboxModal } from './ui/lightbox/LightboxModal.svelte';

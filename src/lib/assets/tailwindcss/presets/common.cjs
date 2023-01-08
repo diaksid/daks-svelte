@@ -10,9 +10,8 @@ module.exports = {
         padding: {
           DEFAULT: '1rem',
           xs: '2rem',
-          sm: '3rem',
-          lg: '4rem',
-          '2xl': '5rem'
+          xl: '4rem',
+          '2xl': '7rem'
         }
       },
       screens: {

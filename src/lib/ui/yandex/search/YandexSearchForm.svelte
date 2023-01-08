@@ -3,7 +3,7 @@
   import { MagnifyingGlass } from 'svelte-heros-v2';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
-  //import Icon from '$lib/ui/iconfy';
+  //import Icon from '$lib/ui/iconify';
   import { beep } from '$lib/utils/audio';
 
   let className = '';

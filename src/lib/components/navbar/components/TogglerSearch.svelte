@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { MagnifyingGlassMinus, MagnifyingGlassPlus } from 'svelte-heros-v2';
-  //import Icon from '$lib/ui/iconfy';
+  //import Icon from '$lib/ui/iconify';
   import { YandexSearchForm } from '$lib/ui/yandex/search';
 
   let className = '';

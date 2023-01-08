@@ -26,28 +26,23 @@
            {className}">
     {#if copylink}
       <Link
-        class="ml-4 hover:text-sky-500"
+        class="mr-auto hover:text-sky-500"
         href={copylink.href}
         target={copylink.target}
         rel="nofollow">
-        &copy;{year}
-        <slot />&trade;
+        &copy;{year} {copylink.label}&trade;
       </Link>
     {:else}
       <span
-        class="ml-4 cursor-default"
+        class="mr-auto cursor-default"
         role="none">
         &copy; {year}
         <slot />&trade;
       </span>
     {/if}
 
-    <div class="px-4 text-slate-400">
-      {timer.format($time)}
-    </div>
-
     {#if links?.length}
-      <nav class="mr-4">
+      <nav class="mx-4">
         {#each links as link}
           <Link
             href={link.href}
@@ -58,5 +53,9 @@
         {/each}
       </nav>
     {/if}
+
+    <div class="text-slate-400">
+      {timer.format($time)}
+    </div>
   </div>
 </footer>

@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { createEventDispatcher } from 'svelte';
   import { Bars3 } from 'svelte-heros-v2';
-  //import Icon from '$lib/ui/iconfy';
+  //import Icon from '$lib/ui/iconify';
   import { outside } from '$lib/utils/event';
 
   const dispatch = createEventDispatcher();

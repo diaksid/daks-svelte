@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Icon, YandexMetrikaHit } from '$lib';
+  import { YandexMetrikaHit } from '$lib';
+  import Icon from '$lib/ui/iconify';
 
   const title = 'DAKS • SVELTE npm packege';
   const description = 'DAks DEV: npm packege for  SVELTE';

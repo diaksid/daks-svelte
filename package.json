@@ -1,13 +1,13 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.15",
+  "version": "0.0.19",
   "description": "DVA svelte package",
   "repository": {
     "type": "git",
     "url": "https://github.com/diaksid/daks-svelte"
   },
   "author": "daks.dev",
-  "homepage": "https://daks.dev/",
+  "homepage": "https://pkg.daks.dev/",
   "private": false,
   "scripts": {
     "clean": "rimraf .svelte-kit && rimraf build && rimraf package",
@@ -23,7 +23,7 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."
   },
-  "devDependencies": {
+ "devDependencies": {
     "@iconify/svelte": "*",
     "@playwright/test": "*",
     "@sveltejs/adapter-node": "*",
@@ -48,14 +48,27 @@
     "prettier-plugin-svelte": "*",
     "rimraf": "*",
     "sharp": "*",
-    "svelte": "*",
     "svelte-check": "*",
-    "svelte-heros-v2": "*",
     "tailwindcss": "*",
     "tslib": "*",
     "typescript": "*",
     "vite": "*",
     "vitest": "*"
   },
-  "type": "module"
+  "peerDependencies": {
+    "svelte": "*",
+    "svelte-heros-v2": "*"
+  },
+  "exports": {
+    "./open-sans": {
+      "import": "./assets/fonts/open-sans/cyrillic.css"
+    },
+    "./open-sans/variable": {
+      "import": "./assets/fonts/open-sans/variable.css"
+    },
+    "./tailwindcss": {
+      "import": "./assets/tailwindcss/index.css"
+    }
+  },
+ "type": "module"
 }

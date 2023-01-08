@@ -28,6 +28,12 @@ const config = {
     adapter: adapter(options)
 
     //inlineStyleThreshold: 8192
+  },
+
+  package: {
+    exports(filepath) {
+      return filepath.indexOf('ui/iconify') === -1 && filepath.indexOf('assets/fonts') === -1;
+    }
   }
 };
 

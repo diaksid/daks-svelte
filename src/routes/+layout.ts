@@ -18,9 +18,18 @@ export const load = (page: Page) => ({
     copylink: {
       href: '//daks.dev',
       target: '_blank',
-      label: 'daks dev'
+      label: 'DAks DEV'
     },
-    links: []
+    links: [
+      {
+        href: '/iconify',
+        label: 'iconify'
+      },
+      {
+        href: '/heros-v2',
+        label: 'heros v2'
+      }
+    ]
   },
   referesh: page.url.pathname
 });

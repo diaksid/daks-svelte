@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Moon, Sun } from 'svelte-heros-v2';
-  //import Icon from '$lib/ui/iconfy';
+  //import Icon from '$lib/ui/iconify';
 
   let className = '';
   export { className as class };

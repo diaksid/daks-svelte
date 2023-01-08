@@ -12,7 +12,7 @@ export default async () => {
   const count: any = {};
 
   const iconset = JSON.parse(
-    await fs.readFile(resolve(__dirname, 'src/lib/ui/iconfy/iconset.json'), 'utf8')
+    await fs.readFile(resolve(__dirname, 'src/lib/ui/iconify/iconset.json'), 'utf8')
   );
 
   const load = async (prefix: string) => {
@@ -43,7 +43,7 @@ export default async () => {
 
   for (const prefix of Object.keys(iconset)) await load(prefix);
 
-  await fs.writeFile(resolve(__dirname, 'src/lib/ui/iconfy/bundles.json'), JSON.stringify(bundles));
+  await fs.writeFile(resolve(__dirname, 'src/lib/ui/iconify/bundles.json'), JSON.stringify(bundles));
 
   return count;
 };

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Navbar, Footer, ScreenBlock, RouteTransition, YandexMetrikaInit } from '$lib';
+  import { Star } from 'svelte-heros-v2';
 
   import '../app.css';
 
@@ -7,6 +8,7 @@
   export let data: PageData;
 
   import navigation from '$lib/configs/navigation';
+  const brand = undefined; // '/icons/logo.svg'
 
   if (!import.meta.env.SSR && !('color-theme' in localStorage)) {
     localStorage.setItem('color-theme', 'dark');
@@ -17,7 +19,9 @@
 <!--svelte:head>
 </svelte:head-->
 
-<Navbar {...navigation.navbar} />
+<Navbar
+  {...navigation.navbar}
+  {brand} />
 
 <RouteTransition
   referesh={data.referesh}

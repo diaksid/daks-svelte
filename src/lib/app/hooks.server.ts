@@ -7,6 +7,40 @@ import type { Handle } from '@sveltejs/kit';
 
 const pkg = JSON.parse(await fs.readFile(resolve(process.cwd(), 'package.json'), 'utf8'));
 
+const minification = {
+  collapseBooleanAttributes: true,
+  collapseInlineTagWhitespace: true,
+  collapseWhitespace: true,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  minifyURLs: true,
+  //preserveLineBreaks: true,
+  removeAttributeQuotes: true,
+  //removeComments: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  removeTagWhitespace: true,
+  useShortDoctype: true
+};
+
+const microdata = (pathname: string) => {
+  const data: any = {};
+  switch (pathname) {
+    case '/about':
+      data.page = 'AboutPage';
+      break;
+    case '/contacts':
+      data.page = 'ContactPage';
+      break;
+    default:
+      data.page = 'WebPage';
+  }
+  return data;
+};
+
 export const handle: Handle = async ({ event, resolve }) => {
   const preloads = ['js', 'css', 'font'];
   const response = await resolve(event, {
@@ -27,43 +61,11 @@ export const handle: Handle = async ({ event, resolve }) => {
   }
 
   if (response.headers.get('content-type') === 'text/html') {
-    const minification_options = {
-      collapseBooleanAttributes: true,
-      collapseInlineTagWhitespace: true,
-      collapseWhitespace: true,
-      decodeEntities: true,
-      minifyCSS: true,
-      minifyJS: true,
-      minifyURLs: true,
-      //preserveLineBreaks: true,
-      removeAttributeQuotes: true,
-      //removeComments: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true,
-      removeTagWhitespace: true,
-      useShortDoctype: true
-    };
-    const microdata = (pathname: string) => {
-      const data: any = {};
-      switch (pathname) {
-        case '/about':
-          data.page = 'AboutPage';
-          break;
-        case '/contacts':
-          data.page = 'ContactPage';
-          break;
-        default:
-          data.page = 'WebPage';
-      }
-      return data;
-    };
     const schema = microdata(event.url.pathname);
     let html = (await response.text())
       .replaceAll('%app.version%', pkg.version)
       .replace('%schema.page%', schema.page);
-    if (building) html = await minify(html, minification_options);
+    if (building) html = await minify(html, minification);
     return new Response(html, {
       status: response.status,
       headers: response.headers

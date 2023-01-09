@@ -12,7 +12,7 @@
   };
   */
 
-  export let image: undefined | string = undefined;
+  export let brand: undefined | string = undefined;
   export let size = '24';
   export let alt = 'Главная';
 
@@ -28,9 +28,9 @@
     class="relative z-10 flex disabled
            {className}"
     role="none">
-    {#if image}
+    {#if brand}
       <img
-        src={image}
+        src={brand}
         width={size}
         height={size}
         {alt} />
@@ -55,9 +55,9 @@
            {className}"
     href="/"
     itemprop="relatedLink">
-    {#if image}
+    {#if brand}
       <img
-        src={image}
+        src={brand}
         width={size}
         height={size}
         {alt} />

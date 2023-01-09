@@ -9,6 +9,7 @@
 
   export let links!: NavLink[];
   export let centered = true;
+  export let brand: undefined | string = undefined;
 
   let className = '';
   export { className as class };
@@ -64,7 +65,8 @@
     <Home
       on:click={click}
       class="p-2 text-cyan-600 hover:text-sky-500 dark:hover:text-sky-300"
-      size="28" />
+      size="28"
+      {brand} />
 
     <Waiting
       class="ml-auto text-gray-400"

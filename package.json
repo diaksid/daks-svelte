@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "DAks Svelte package",
   "repository": {
     "type": "git",
@@ -75,7 +75,9 @@
     "vitest": "*"
   },
   "peerDependencies": {
+    "@types/html-minifier": "*",
     "@types/html-minifier-terser": "*",
+    "html-minifier": "*",
     "html-minifier-terser": "*",
     "svelte": "*",
     "svelte-heros-v2": "*"

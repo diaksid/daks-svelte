@@ -1,6 +1,4 @@
 <script lang="ts">
-  import type { MenuItem, NavLink } from '$lib/types';
-
   export let item!: MenuItem | NavLink;
   export let tag = 'span';
 

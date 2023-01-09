@@ -10,12 +10,16 @@
   <meta
     name="robots"
     content="noindex, nofollow" />
+  <link
+    rel="alternate icon"
+    href="%sveltekit.assets%/favicon.ico?v=%app.version%"
+    sizes="any" />
   %sveltekit.head%
 </head>
 
 <body
   itemscope
-  itemtype="https://schema.org/WebPage">
+  itemtype="https://schema.org/%schema.page%">
   <div class="flex flex-col min-h-screen">
     %sveltekit.body%
   </div>

@@ -1,26 +1,23 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
   import { Navbar, Footer, ScreenBlock, RouteTransition, YandexMetrikaInit } from '$lib';
+
+  import '../app.css';
 
   import type { PageData } from './$types';
   export let data: PageData;
 
-  import '../app.css';
+  import navigation from '$lib/configs/navigation';
 
-  if (browser && !('color-theme' in localStorage)) {
+  if (!import.meta.env.SSR && !('color-theme' in localStorage)) {
     localStorage.setItem('color-theme', 'dark');
     document.documentElement.classList.add('dark');
   }
 </script>
 
-<svelte:head>
-  <link
-    rel="alternate icon"
-    href="/favicon.ico"
-    sizes="any" />
-</svelte:head>
+<!--svelte:head>
+</svelte:head-->
 
-<Navbar links={data.navbar} />
+<Navbar {...navigation.navbar} />
 
 <RouteTransition
   referesh={data.referesh}
@@ -29,7 +26,7 @@
   <slot />
 </RouteTransition>
 
-<Footer {...data.footer}>DAks DEV</Footer>
+<Footer {...navigation.footer}>DAks DEV</Footer>
 
 <ScreenBlock class="bg-slate-800" />
 

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Link } from '$lib';
-  import type { NavLink } from '$lib/types';
   import { time } from './stores';
   
   export let copylink: undefined | NavLink = undefined;
@@ -26,15 +25,15 @@
            {className}">
     {#if copylink}
       <Link
-        class="mr-auto hover:text-sky-500"
+        class="pr-4 mr-auto hover:text-sky-500"
         href={copylink.href}
         target={copylink.target}
         rel="nofollow">
-        &copy;{year} {copylink.label}&trade;
+        &copy;{year} {@html copylink.label}&trade;
       </Link>
     {:else}
       <span
-        class="mr-auto cursor-default"
+        class="pr-4 mr-auto cursor-default"
         role="none">
         &copy; {year}
         <slot />&trade;
@@ -46,15 +45,15 @@
         {#each links as link}
           <Link
             href={link.href}
-            class="mr-4 text-right hover:text-sky-500"
+            class="px-4 text-right hover:text-sky-500"
             itemprop="relatedLink">
-            {link.label}
+            {@html link.label}
           </Link>
         {/each}
       </nav>
     {/if}
 
-    <div class="text-slate-400">
+    <div class="pl-4 text-slate-400">
       {timer.format($time)}
     </div>
   </div>

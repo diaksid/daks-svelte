@@ -1,7 +1,6 @@
 <script lang="ts">
   import { ChevronDown } from 'svelte-heros-v2';
   import { outside } from '$lib/utils/event';
-  import type { MenuItem, NavLink } from '$lib/types';
   import Items from './Items.svelte';
   import Item from './Item.svelte';
 

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page, navigating } from '$app/stores';
-  import type { Timeout } from '$lib/types';
 
   export let robots: undefined | string = undefined;
   export let title!: string;

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { MenuItem, NavLink } from '$lib/types';
   import Item from './Item.svelte';
 
   export let items!: (MenuItem | NavLink)[];

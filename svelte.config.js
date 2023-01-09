@@ -31,8 +31,11 @@ const config = {
   },
 
   package: {
+    files(filepath) {
+      return !/^(configs|ui\/iconify)/.test(filepath);
+    },
     exports(filepath) {
-      return filepath.indexOf('ui/iconify') === -1 && filepath.indexOf('assets/fonts') === -1;
+      return !/^(assets\/fonts)/.test(filepath);
     }
   }
 };

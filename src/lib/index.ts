@@ -1,3 +1,22 @@
+declare global {
+  type Timeout = string | number | NodeJS.Timeout | undefined;
+
+  interface NavLink {
+    label: string;
+    href: string;
+    title?: string;
+    target?: string;
+    handle?: (event?: Event) => void;
+    links?: NavLink[];
+  }
+
+  interface MenuItem {
+    name: string;
+    title?: string;
+    handle?: (event?: Event) => void;
+  }
+}
+
 export { default as Navbar } from './components/navbar/Navbar.svelte';
 export { default as Footer } from './components/footer/Footer.svelte';
 

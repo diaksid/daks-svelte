@@ -1,6 +1,3 @@
-import type { Timeout } from '$lib/types';
-export type { Timeout };
-
 export interface Image {
   src: string,
   width: number,

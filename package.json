@@ -1,7 +1,7 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.19",
-  "description": "DVA svelte package",
+  "version": "0.0.21",
+  "description": "DAks Svelte package",
   "repository": {
     "type": "git",
     "url": "https://github.com/diaksid/daks-svelte"
@@ -30,6 +30,7 @@
     "@sveltejs/adapter-static": "*",
     "@sveltejs/kit": "*",
     "@sveltejs/package": "*",
+    "@types/html-minifier-terser": "*",
     "@types/sharp": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
@@ -40,6 +41,7 @@
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-svelte3": "*",
+    "html-minifier-terser": "*",
     "iconify-icon": "*",
     "postcss": "*",
     "postcss-import": "*",
@@ -60,10 +62,10 @@
     "svelte-heros-v2": "*"
   },
   "exports": {
-    "./open-sans": {
+    "./fonts/open-sans": {
       "import": "./assets/fonts/open-sans/cyrillic.css"
     },
-    "./open-sans/variable": {
+    "./fonts/open-sans/variable": {
       "import": "./assets/fonts/open-sans/variable.css"
     },
     "./tailwindcss": {

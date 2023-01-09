@@ -1,7 +1,6 @@
 <script lang="ts">
   import { afterNavigate } from '$app/navigation';
   import { page } from '$app/stores';
-  import type { NavLink } from '$lib/types';
   import Home from './components/Home.svelte';
   import ToggleSearch from './components/TogglerSearch.svelte';
   import ToggleTheme from './components/ToggleTheme.svelte';

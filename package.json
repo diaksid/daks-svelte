@@ -1,13 +1,32 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.21",
+  "version": "0.0.24",
   "description": "DAks Svelte package",
   "repository": {
     "type": "git",
     "url": "https://github.com/diaksid/daks-svelte"
   },
-  "author": "daks.dev",
+  "author": {
+    "name": "daks.dev",
+    "email": "mail@daks.dev",
+    "url": "https://daks.dev"
+  },
+  "bugs": "https://github.com/diaksid/daks-svelte/issues",
   "homepage": "https://pkg.daks.dev/",
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "tailwindcss",
+    "carousel",
+    "dropdown",
+    "iconify",
+    "footer",
+    "lightbox",
+    "link",
+    "navbar",
+    "spinner",
+    "yandex"
+  ],
   "private": false,
   "scripts": {
     "clean": "rimraf .svelte-kit && rimraf build && rimraf package",
@@ -23,14 +42,13 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."
   },
- "devDependencies": {
+  "devDependencies": {
     "@iconify/svelte": "*",
     "@playwright/test": "*",
     "@sveltejs/adapter-node": "*",
     "@sveltejs/adapter-static": "*",
     "@sveltejs/kit": "*",
     "@sveltejs/package": "*",
-    "@types/html-minifier-terser": "*",
     "@types/sharp": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
@@ -41,7 +59,6 @@
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-svelte3": "*",
-    "html-minifier-terser": "*",
     "iconify-icon": "*",
     "postcss": "*",
     "postcss-import": "*",
@@ -58,6 +75,8 @@
     "vitest": "*"
   },
   "peerDependencies": {
+    "@types/html-minifier-terser": "*",
+    "html-minifier-terser": "*",
     "svelte": "*",
     "svelte-heros-v2": "*"
   },
@@ -72,5 +91,5 @@
       "import": "./assets/tailwindcss/index.css"
     }
   },
- "type": "module"
+  "type": "module"
 }

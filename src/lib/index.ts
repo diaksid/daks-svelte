@@ -16,6 +16,7 @@ declare global {
     handle?: (event?: Event) => void;
   }
 }
+export type { Timeout, NavLink, MenuItem };
 
 export { default as Navbar } from './components/navbar/Navbar.svelte';
 export { default as Footer } from './components/footer/Footer.svelte';

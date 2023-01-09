@@ -6,5 +6,5 @@ declare global {
   }
 }
 
-export { handle } from './hooks';
+export { handle } from './hooks.server';
 

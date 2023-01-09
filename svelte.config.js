@@ -25,7 +25,11 @@ const config = {
       $assets: resolve(__dirname, 'static')
     },
 
-    adapter: adapter(options)
+    adapter: adapter(options),
+
+    files: {
+      serviceWorker: 'src/lib/app/service-worker'
+    }
 
     //inlineStyleThreshold: 8192
   },

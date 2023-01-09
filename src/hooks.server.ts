@@ -1,4 +1,18 @@
 import type { Handle } from '@sveltejs/kit';
-import { handle as _handle } from '$lib/app/hooks';
+import { handle as _handle } from '$lib/app/hooks.server';
 
-export const handle: Handle = async ({ event, resolve }) => await _handle({ event, resolve });
+const redirects: any = {
+  // '': ''
+};
+
+export const handle: Handle = async ({ event, resolve }) => {
+  if (event.url.pathname in redirects) {
+    return new Response(undefined, {
+      status: 308,
+      headers: {
+        location: redirects[event.url.pathname]
+      }
+    });
+  }
+  return await _handle({ event, resolve });
+};

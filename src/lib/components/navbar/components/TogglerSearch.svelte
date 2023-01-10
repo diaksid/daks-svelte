@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { MagnifyingGlassMinus, MagnifyingGlassPlus } from 'svelte-heros-v2';
-  //import Icon from '$lib/ui/iconify';
+  import Icon from '$lib/ui/iconify';
   import { YandexSearchForm } from '$lib';
 
   let className = '';
@@ -46,12 +45,8 @@
     }
   };
 
-  let icon: (() => undefined) | (() => ConstructorOfATypedSvelteComponent) = () => undefined;
   let form: ConstructorOfATypedSvelteComponent;
-  onMount(() => {
-    icon = () => (search || disabled ? MagnifyingGlassMinus : MagnifyingGlassPlus);
-    form = YandexSearchForm;
-  });
+  onMount(() => (form = YandexSearchForm));
 </script>
 
 <svelte:window on:keydown={handleKey} />
@@ -68,15 +63,11 @@
     aria-haspopup="true"
     aria-expanded="false"
     aria-labelledby="">
-    <svelte:component
-      this={icon()}
-      class="pointer-events-none"
-      {size} />
-    <!--Icon
+    <Icon
       icon={`ic:round-search${search || disabled ? '-off' : ''}`}
       class="pointer-events-none"
       width={size}
-      height={size} /-->
+      height={size} />
   </button>
 </div>
 

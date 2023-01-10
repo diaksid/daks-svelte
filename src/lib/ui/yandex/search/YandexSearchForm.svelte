@@ -1,9 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { MagnifyingGlass } from 'svelte-heros-v2';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
-  //import Icon from '$lib/ui/iconify';
+  import Icon from '$lib/ui/iconify';
   import { beep } from '$lib/utils/audio';
 
   let className = '';
@@ -113,11 +112,11 @@
              {css.button}"
       type="button"
       disabled={!validation()}>
-      <MagnifyingGlass class="h-7 w-7 {reverse ? '' : '-scale-x-100'}" />
-      <!--Icon
+      <Icon
         icon="wpf:search"
         class="h-7 w-7"
-        hFlip={!reverse} /-->
+        hFlip={!reverse}
+        ariaLabel="yandex search" />
     </button>
   {/if}
 </form>

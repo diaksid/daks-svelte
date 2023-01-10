@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import { resolve } from 'path';
 import { addAPIProvider, loadIcon } from 'iconify-icon';
 
-export default async () => {
+export default async (assets = 'src/lib/assets/iconify') => {
   addAPIProvider('online', {
     resources: ['http://localhost:3000']
   });
@@ -12,7 +12,7 @@ export default async () => {
   const count: any = {};
 
   const iconset = JSON.parse(
-    await fs.readFile(resolve(__dirname, 'src/lib/ui/iconify/iconset.json'), 'utf8')
+    await fs.readFile(resolve(__dirname, assets, 'iconset.json'), 'utf8')
   );
 
   const load = async (prefix: string) => {
@@ -43,7 +43,7 @@ export default async () => {
 
   for (const prefix of Object.keys(iconset)) await load(prefix);
 
-  await fs.writeFile(resolve(__dirname, 'src/lib/ui/iconify/bundles.json'), JSON.stringify(bundles));
+  await fs.writeFile(resolve(__dirname, assets, 'bundles.json'), JSON.stringify(bundles));
 
   return count;
 };

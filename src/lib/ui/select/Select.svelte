@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Bars3, ChevronDown, ChevronUp } from 'svelte-heros-v2';
+  import Icon from '$lib/ui/iconify';
   import { outside } from '$lib/utils/event';
   import Option from './Option.svelte';
 
@@ -42,12 +42,16 @@
     aria-labelledby="listbox-label">
     <span class="flex items-center pointer-events-none">
       <!-- Heroicon name: bars-3 -->
-      <Bars3 class="w-6 h-6 text-gray-400" />
+      <Icon
+        icon="ic:round-menu"
+        class="w-6 h-6 text-gray-400" />
       <span class="ml-3 block truncate">Select</span>
     </span>
     <span class="absolute inset-y-0 right-0 ml-3 flex items-center pr-2 pointer-events-none">
-      <!-- Heroicon name: mini/chevron-up-down -->
-      <ChevronDown class="h-6 w-6 text-gray-400 cursor-pointer" />
+      <Icon
+        icon="ic:round-chevron-right"
+        class="h-6 w-6 text-gray-400 cursor-pointer"
+        rotate="90" />
     </span>
   </button>
 

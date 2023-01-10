@@ -2,7 +2,7 @@ import type { UserConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 const config: UserConfig = {
-  logLevel: 'info', // 'error'
+  logLevel: 'error', // 'info'
   plugins: [sveltekit()],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}']

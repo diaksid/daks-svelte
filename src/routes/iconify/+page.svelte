@@ -1,11 +1,9 @@
 <script lang="ts">
+  import { goto, invalidate } from '$app/navigation';
   import Icon from '$lib/ui/iconify';
   import Bundle from './Bundle.svelte';
-  import bundles from '$lib/ui/iconify/bundles.json';
-  import custom from '$lib/ui/iconify/custom';
-
-  //import type { PageData } from './$types';
-  //export let data: PageData;
+  import bundles from '$lib/assets/iconify/bundles.json';
+  import custom from '$lib/assets/iconify/custom';
 
   let waiting = false;
   $: iconset = {};
@@ -20,8 +18,11 @@
       },
       body: undefined
     });
-    iconset = JSON.parse(await response.text());
-    setTimeout(() => (waiting = false), 500);
+    if (response.ok) {
+      iconset = await response.json();
+    }
+    else alert('Ошибка HTTP: ' + response.status);
+    setTimeout(() => (waiting = false), 300);
   };
 </script>
 

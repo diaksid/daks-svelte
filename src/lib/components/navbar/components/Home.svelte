@@ -1,26 +1,17 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { Home } from 'svelte-heros-v2';
   import { page } from '$app/stores';
-
-  /*
   import Icon from '$lib/ui/iconify';
 
+  export let brand: undefined | string = undefined;
   export let icons: { home: string; page: string } = {
     home: 'line-md:home-simple-twotone',
     page: 'line-md:home-simple'
   };
-  */
-
-  export let brand: undefined | string = undefined;
   export let size = '24';
   export let alt = 'Главная';
 
   let className = '';
   export { className as class };
-
-  let icon: ConstructorOfATypedSvelteComponent;
-  onMount(() => (icon = Home));
 </script>
 
 {#if $page.url.pathname === '/'}
@@ -35,17 +26,12 @@
         height={size}
         {alt} />
     {:else}
-      <svelte:component
-        this={icon}
-        {size}
-        ariaLabel={alt}
-        variation="solid" />
-      <!--Icon
+      <Icon
         icon={icons.home}
         width={size}
         height={size}>
         {alt}
-      </Icon-->
+      </Icon>
     {/if}
   </span>
 {:else}
@@ -62,16 +48,12 @@
         height={size}
         {alt} />
     {:else}
-      <svelte:component
-        this={icon}
-        {size}
-        ariaLabel={alt} />
-      <!--Icon
+      <Icon
         icon={icons.page}
         width={size}
         height={size}>
         {alt}
-      </Icon-->
+      </Icon>
     {/if}
   </a>
 {/if}

@@ -4,10 +4,6 @@ const config = {
       {
         href: '/iconify',
         label: 'iconify'
-      },
-      {
-        href: '/heros-v2',
-        label: 'heros v2'
       }
     ]
   },
@@ -21,10 +17,6 @@ const config = {
       {
         href: '/iconify',
         label: 'iconify'
-      },
-      {
-        href: '/heros-v2',
-        label: 'heros v2'
       }
     ]
   }

@@ -36,7 +36,7 @@ const config = {
 
   package: {
     files(filepath) {
-      return !/^(configs|ui\/iconify)/.test(filepath);
+      return !/^(configs|assets\/iconify)/.test(filepath);
     },
     exports(filepath) {
       return !/^(assets\/fonts)/.test(filepath);

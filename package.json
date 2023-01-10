@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "DAks Svelte package",
   "repository": {
     "type": "git",
@@ -43,7 +43,6 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "devDependencies": {
-    "@iconify/svelte": "*",
     "@playwright/test": "*",
     "@sveltejs/adapter-node": "*",
     "@sveltejs/adapter-static": "*",
@@ -59,7 +58,6 @@
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-svelte3": "*",
-    "iconify-icon": "*",
     "postcss": "*",
     "postcss-import": "*",
     "postcss-load-config": "*",
@@ -75,12 +73,11 @@
     "vitest": "*"
   },
   "peerDependencies": {
-    "@types/html-minifier": "*",
+    "@iconify/svelte": "*",
     "@types/html-minifier-terser": "*",
-    "html-minifier": "*",
     "html-minifier-terser": "*",
-    "svelte": "*",
-    "svelte-heros-v2": "*"
+    "iconify-icon": "*",
+    "svelte": "*"
   },
   "exports": {
     "./fonts/open-sans": {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ChevronDown } from 'svelte-heros-v2';
+  import Icon from '$lib/ui/iconify';
   import { outside } from '$lib/utils/event';
   import Items from './Items.svelte';
   import Item from './Item.svelte';
@@ -40,11 +40,10 @@
       aria-expanded="true"
       aria-haspopup="true">
       {label}
-      <!-- Heroicon name: mini/chevron-down -->
-      <ChevronDown
-        class="w-6 h-6 ml-2 -mr-1
-               pointer-events-none"
-        aria-hidden="true" />
+      <Icon
+        icon="ic:round-chevron-right"
+        class="w-6 h-6 ml-2 -mr-1 pointer-events-none"
+        rotate="90" />
     </button>
   </div>
 

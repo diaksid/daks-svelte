@@ -36,10 +36,10 @@ const config = {
 
   package: {
     files(filepath) {
-      return !/^(configs|assets\/iconify)/.test(filepath);
+      return !/^(configs)/.test(filepath);
     },
     exports(filepath) {
-      return !/^(assets\/fonts)/.test(filepath);
+      return !/^(assets\/fonts|assets\/iconify)/.test(filepath);
     }
   }
 };

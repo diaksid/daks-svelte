@@ -1,12 +1,11 @@
-//@ts-nocheck
 import { addCollection } from '@iconify/svelte/offline';
 
 import bundles from './bundles.json';
 bundles.forEach((bundle: any) => addCollection(bundle));
 
-const custom = [];
+const custom = ['svelte-logo'];
 
-// import './custom/...';
+import './custom/svelte-logo';
 
 export default custom;
 

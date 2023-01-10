@@ -16,6 +16,7 @@ declare global {
     handle?: (event?: Event) => void;
   }
 }
+
 export type { Timeout, NavLink, MenuItem };
 
 export { default as Navbar } from './components/navbar/Navbar.svelte';
@@ -27,6 +28,8 @@ export { default as YandexMetrikaInit } from './seo/yandex/metrika/YandexMetrika
 export { default as Carousel } from './ui/carousel/Carousel.svelte';
 
 export { default as Dropdown } from './ui/dropdown/Dropdown.svelte';
+
+export { default as Icon } from './ui/iconify/Icon.svelte';
 
 export { default as Lightbox } from './ui/lightbox/Lightbox.svelte';
 export { default as Lightboxes } from './ui/lightbox/Lightboxes.svelte';

@@ -2,6 +2,8 @@ export { default as Carousel } from './carousel/Carousel.svelte';
 
 export { default as Dropdown } from './dropdown/Dropdown.svelte';
 
+export { default as Icon } from './iconify/Icon.svelte';
+
 export { default as Lightbox } from './lightbox/Lightbox.svelte';
 export { default as Lightboxes } from './lightbox/Lightboxes.svelte';
 export { default as LightboxModal } from './lightbox/LightboxModal.svelte';

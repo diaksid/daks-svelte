@@ -2,4 +2,7 @@
 //export const csr = dev;
 export const prerender = true;
 
-import '$lib/ui/iconify/client';
+import type { Page } from '@sveltejs/kit';
+export const load = (page: Page) => ({
+  referesh: page.url.pathname
+});

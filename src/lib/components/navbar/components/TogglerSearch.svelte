@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Icon from '$lib/ui/iconify';
-  import { YandexSearchForm } from '$lib';
+  import { YandexSearchForm } from '$lib/ui/yandex/search';
 
   let className = '';
   export { className as class };

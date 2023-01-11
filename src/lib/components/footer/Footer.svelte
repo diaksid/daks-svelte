@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Link } from '$lib';
+  import Link from '$lib/ui/link';
   import { time } from './stores';
-  
+
   export let copylink: undefined | NavLink = undefined;
   export let links: undefined | NavLink[] = undefined;
 
@@ -29,7 +29,8 @@
         href={copylink.href}
         target={copylink.target}
         rel="nofollow">
-        &copy;{year} {@html copylink.label}&trade;
+        &copy;{year}
+        {@html copylink.label}&trade;
       </Link>
     {:else}
       <span

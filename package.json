@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "DAks Svelte package",
   "repository": {
     "type": "git",
@@ -81,12 +81,6 @@
     "svelte": "*"
   },
   "exports": {
-    "./iconify": {
-      "import": "./ui/iconify/server.js"
-    },
-    "./iconify/upload": {
-      "import": "./ui/iconify/upload.js"
-    },
     "./tailwindcss": {
       "import": "./assets/tailwindcss/index.css"
     },
@@ -95,7 +89,9 @@
     },
     "./fonts/open-sans/variable": {
       "import": "./assets/fonts/open-sans/variable.css"
-    }
+    },
+    "./iconify": "./ui/iconify/server.js",
+    "./iconify/upload": "./ui/iconify/upload.js"
   },
   "type": "module"
 }

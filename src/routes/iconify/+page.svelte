@@ -1,6 +1,4 @@
 <script lang="ts">
-  //import { goto, invalidate } from '$app/navigation';
-  import { afterUpdate } from 'svelte';
   import Icon from '$lib/ui/iconify';
   import Bundle from './Bundle.svelte';
 
@@ -23,10 +21,7 @@
       iconset = await response.json();
     } else alert('Ошибка HTTP: ' + response.status);
     setTimeout(() => (waiting = false), 300);
-    //setTimeout(() => location.reload(), 3000);
   };
-
-  //afterUpdate(upload);
 </script>
 
 <svelte:head>

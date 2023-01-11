@@ -7,7 +7,7 @@ import custom from '$iconify';
 
 import type { Page } from '@sveltejs/kit';
 export const load = (page: Page) => ({
-  // referesh: page.url.pathname,
+  referesh: page.url.pathname,
   bundles,
   custom
 });

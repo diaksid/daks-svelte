@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "DAks Svelte package",
   "repository": {
     "type": "git",
@@ -31,12 +31,12 @@
   "private": false,
   "scripts": {
     "clean": "rimraf .svelte-kit && rimraf build && rimraf package",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check": "rimraf .svelte-kit && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "vite dev --port=3000",
-    "build": "vite build",
+    "build": "rimraf build && vite build",
     "preview": "vite preview --port=3000",
-    "package": "svelte-kit sync && svelte-package",
+    "package": "rimraf package && svelte-kit sync && svelte-package",
     "prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
     "test": "playwright test",
     "test:unit": "vitest",
@@ -90,8 +90,14 @@
     "./fonts/open-sans/variable": {
       "import": "./assets/fonts/open-sans/variable.css"
     },
-    "./iconify": "./ui/iconify/server.js",
-    "./iconify/upload": "./ui/iconify/upload.js"
+    "./iconify": {
+      "import": "./ui/iconify/server.js",
+      "types": "./ui/iconify/server.d.ts"
+    },
+    "./iconify/upload": {
+      "import": "./ui/iconify/upload.js",
+      "types": "./ui/iconify/upload.d.ts"
+    }
   },
   "type": "module"
 }

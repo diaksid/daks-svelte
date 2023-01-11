@@ -1,19 +1,19 @@
-import { promises as fs } from 'fs';
-import { resolve } from 'path';
 import { addAPIProvider, loadIcon } from 'iconify-icon';
+import { rootpath, readFile, writeFile } from '$lib/utils/fs';
 
-export default async (assets = 'src/lib/assets/iconify') => {
+export default async (resources = ['http://localhost:3000']) => {
   addAPIProvider('online', {
-    resources: ['http://localhost:3000']
+    resources
   });
 
-  const __dirname = process.cwd();
+  let assets = await readFile('.svelte-kit/tsconfig.json');
+  assets = assets && JSON.parse(assets).compilerOptions.paths['$iconify'];
+  assets = assets ? assets[0] : 'src/lib/assets/iconify';
+
   const bundles: any[] = [];
   const count: any = {};
 
-  const iconset = JSON.parse(
-    await fs.readFile(resolve(__dirname, assets, 'iconset.json'), 'utf8')
-  );
+  const iconset = JSON.parse(await readFile(rootpath(assets, 'iconset.json')));
 
   const load = async (prefix: string) => {
     const icons = iconset[prefix];
@@ -43,7 +43,7 @@ export default async (assets = 'src/lib/assets/iconify') => {
 
   for (const prefix of Object.keys(iconset)) await load(prefix);
 
-  await fs.writeFile(resolve(__dirname, assets, 'bundles.json'), JSON.stringify(bundles));
+  await writeFile(rootpath(assets, 'bundles.json'), JSON.stringify(bundles));
 
   return count;
 };

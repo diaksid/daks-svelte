@@ -1,6 +1,6 @@
 //import { fileURLToPath } from 'url';
 //import { dirname, resolve } from 'path';
-import { rootpath, mkdir, access, writeFile, readFile, copyFile } from '$lib/utils/fs';
+import { rootpath, mkdir, access, writeFile, readFile } from '$lib/utils/fs';
 
 //export const __dirname = dirname(fileURLToPath(import.meta.url));
 

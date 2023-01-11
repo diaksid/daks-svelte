@@ -43,7 +43,7 @@
       <Icon
         icon="ic:round-chevron-right"
         class="w-6 h-6 ml-2 -mr-1 pointer-events-none"
-        rotate="90" />
+        rotate="45" />
     </button>
   </div>
 

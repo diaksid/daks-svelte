@@ -49,9 +49,8 @@
     </span>
     <span class="absolute inset-y-0 right-0 ml-3 flex items-center pr-2 pointer-events-none">
       <Icon
-        icon="ic:round-chevron-right"
-        class="h-6 w-6 text-gray-400 cursor-pointer"
-        rotate="90" />
+        icon="ic:round-unfold-more"
+        class="h-6 w-6 text-gray-400 cursor-pointer" />
     </span>
   </button>
 

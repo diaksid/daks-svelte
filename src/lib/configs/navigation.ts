@@ -2,8 +2,12 @@ const config = {
   navbar: {
     links: [
       {
+        href: '/tailwindcss',
+        label: 'Tailwind CSS'
+      },
+      {
         href: '/iconify',
-        label: 'iconify'
+        label: 'Iconify'
       }
     ]
   },
@@ -14,6 +18,10 @@ const config = {
       label: 'DAks DEV'
     },
     links: [
+      {
+        href: '/tailwindcss',
+        label: 'tailwindcss'
+      },
       {
         href: '/iconify',
         label: 'iconify'

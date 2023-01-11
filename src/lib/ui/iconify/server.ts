@@ -1,15 +1,18 @@
 //import { fileURLToPath } from 'url';
 //import { dirname, resolve } from 'path';
-import { rootpath, mkdir, access, writeFile, copyFile } from '$lib/utils/fs';
+import { rootpath, mkdir, access, writeFile, readFile, copyFile } from '$lib/utils/fs';
 
 //export const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const assets = 'src/lib/assets/iconify';
+let assets = await readFile('.svelte-kit/tsconfig.json');
+assets = assets && JSON.parse(assets).compilerOptions.paths['$iconify'];
+assets = assets ? assets[0] : 'src/lib/assets/iconify';
 
 await mkdir(rootpath(assets, 'custom'));
 
 let file = rootpath(assets, 'index.ts');
-//await access(file, async () => await copyFile(resolve(__dirname, 'client.ts'), file));
+// ? vite config: server: fs: strict: false
+// await access(file, async () => await copyFile(resolve(__dirname, 'client.ts'), file));
 await access(
   file,
   async () =>

@@ -2,8 +2,8 @@
   //import { goto, invalidate } from '$app/navigation';
   import Icon from '$lib/ui/iconify';
   import Bundle from './Bundle.svelte';
-  import bundles from '$lib/assets/iconify/bundles.json';
-  import custom from '$lib/assets/iconify';
+  import bundles from '$iconify/bundles.json';
+  import custom from '$iconify';
 
   let waiting = false;
   $: iconset = {};

@@ -22,7 +22,8 @@ const config = {
 
   kit: {
     alias: {
-      $assets: resolve(__dirname, 'static')
+      $assets: resolve(__dirname, 'static'),
+      $iconify: resolve(__dirname, 'src/lib/assets/iconify')
     },
 
     adapter: adapter(options),
@@ -39,7 +40,7 @@ const config = {
       return !/^(configs)/.test(filepath);
     },
     exports(filepath) {
-      return !/^(assets\/fonts)/.test(filepath);
+      return !/^(assets\/fonts|ui\/iconify)/.test(filepath);
     }
   }
 };

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Navbar, Footer, ScreenBlock, RouteTransition, YandexMetrikaInit } from '$lib';
-  import '$lib/assets/iconify';
+  import '$iconify';
   import '../app.css';
 
   import type { PageData } from './$types';

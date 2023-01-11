@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { handle as _handle } from '$lib/app/hooks.server';
 
-if (import.meta.env.DEV) await import('$lib/ui/iconify/server');
+import.meta.env.DEV && (await import('$lib/ui/iconify/server'));
 
 const redirects: any = {
   // '': ''

@@ -1,6 +1,6 @@
 {
   "name": "daks-svelte",
-  "version": "0.0.26",
+  "version": "0.0.28",
   "description": "DAks Svelte package",
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "link",
     "navbar",
     "spinner",
+    "vite-plugin",
     "yandex"
   ],
   "private": false,
@@ -80,14 +81,14 @@
     "svelte": "*"
   },
   "exports": {
+    "./tailwindcss": {
+      "import": "./assets/tailwindcss/index.css"
+    },
     "./fonts/open-sans": {
       "import": "./assets/fonts/open-sans/cyrillic.css"
     },
     "./fonts/open-sans/variable": {
       "import": "./assets/fonts/open-sans/variable.css"
-    },
-    "./tailwindcss": {
-      "import": "./assets/tailwindcss/index.css"
     }
   },
   "type": "module"

@@ -21,7 +21,7 @@
   <div
     class="wrapper lg:container
            flex flex-row justify-between items-center
-           leading-loose font-mono font-thin text-2xs xs:text-xs sm:text-sm sm:tracking-wide text-gray-400/75
+           leading-loose font-mono font-thin text-2xs xs:text-xs sm:text-sm sm:tracking-wide text-gray-500
            {className}">
     {#if copylink}
       <Link

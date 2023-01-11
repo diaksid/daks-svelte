@@ -39,7 +39,7 @@ const config = {
       return !/^(configs)/.test(filepath);
     },
     exports(filepath) {
-      return !/^(assets\/fonts|assets\/iconify)/.test(filepath);
+      return !/^(assets\/fonts)/.test(filepath);
     }
   }
 };
